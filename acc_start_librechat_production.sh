@@ -9,4 +9,4 @@
 #    - ./deploy-compose.override.yml
 #    - librechat.yml
 
-docker compose -f deploy-compose.yml -f deploy-compose.override.yml up -d
+docker compose -f deploy-compose.yml -f deploy-compose.override.yml up --build -d
