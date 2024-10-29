@@ -89,6 +89,7 @@ junit.xml
 # docker override file
 docker-compose.override.yaml
 docker-compose.override.yml
+deploy-compose.override.yml
 
 # meilisearch
 meilisearch
@@ -106,3 +107,9 @@ uploads/
 
 # owner
 release/
+
+# nginx tls
+client/tls/*
+!client/tls/.gitkeep
+!client/tls/dhparam
+client/nginx-production.conf
