@@ -52,3 +52,18 @@ Probar acceso con: `http://localhost:3080`
 ```
 
 Probar acceso con: `https://virgo.acc.local`
+
+---
+
+## Solución de problemas
+
+Si el contenedor `Librechat-API` se reinicia continuamente, ver sus logs para identificar el problema.
+
+### Error: There was an uncaught error: EACCES: permission denied, open '/app/api/logs/meiliSync-2024-11-20.log'
+
+Se trata de un problema de permisos. En este caso concreto, se arregla dándole permisos 777 a la carpeta logs, y asegurándose de que todos los ficheros de la carpeta logs tienen el propietario correcto (`acc` en producción)
+
+```sh
+sudo chmod 777 logs
+sudo chown acc:acc logs/*.log
+```
